@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer, Header } from "@/components/common";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,16 +14,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "ZenomyAI - Innovación con Inteligencia Artificial",
-  description: "Generado por wime Spa",
-};
+
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const pathname = usePathname();
+
+  const excludeFooterPaths = ['/chat']; // Agrega las rutas donde no quieras mostrar el Footer
+
   return (
     <html lang="es">
       <head>
@@ -35,8 +38,8 @@ export default function RootLayout({
         <Header />
 
         {children}
+        {!excludeFooterPaths.includes(pathname) && <Footer />}
 
-        {/* <Footer/> */}
       </body>
     </html>
   );

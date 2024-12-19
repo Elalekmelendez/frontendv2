@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import HomePage from './home/page'
+import type { Metadata } from "next";
 
 // SEO
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    
+
     <HomePage />
 
   );

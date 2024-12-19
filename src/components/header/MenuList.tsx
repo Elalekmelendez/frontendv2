@@ -11,13 +11,13 @@ const MenuList = () => (
                 className="w-40"
             />
         </MenuItem>
-        <MenuItem href="javascript:void(0)" text="Inicio" />
-        <MenuItem href="javascript:void(0)" text="Páginas" hasSubmenu>
+        <MenuItem href="/" text="Inicio" />
+        <MenuItem href="/" text="Páginas" hasSubmenu>
             <SubMenu />
         </MenuItem>
         <MenuItem href="/subscriptions" text="Suscripciones" />
-        <MenuItem href="javascript:void(0)" text="Blog" />
-        <MenuItem href="javascript:void(0)" text="Sobre nosotros" />
+        <MenuItem href="/" text="Blog" />
+        <MenuItem href="/" text="Sobre nosotros" />
         <MenuItem href="/chat" text="Chat" />
     </ul>
 )
