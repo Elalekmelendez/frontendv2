@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputProps } from '@/interfaces/chat/Input'
+import { InputProps } from '@/interfaces'
 
 
 const Input: React.FC<InputProps> = ({ inputRef, input, handleInputChange, handleKeyDown, isLoading }) => {

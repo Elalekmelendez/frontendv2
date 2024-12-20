@@ -20,7 +20,7 @@ const Chatbot: React.FC = () => {
   } = useChat();
 
   return (
-    <div className="w-[400px] h-[850px] mx-auto border border-gray-300 rounded-lg flex flex-col overflow-hidden font-sans mt-5">
+    <div className="w-[400px] h-[800px] mt-20 mx-auto border border-gray-300 rounded-lg flex flex-col overflow-hidden font-sans mt-5">
       <Header />
 
       <MessageList messages={messages} messagesEndRef={messagesEndRef} />
