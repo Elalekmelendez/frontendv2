@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, KeyboardEvent, useRef, useEffect } from "react";
 import { sendMessageToRasa } from "@/lib/rasaApi";
-import { Message } from "@/interfaces/chat/message";
+import { Message } from "@/interfaces/message.interface";
 import { v4 as uuidv4 } from "uuid";
 
 export const useChat = () => {

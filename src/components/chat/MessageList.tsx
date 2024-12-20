@@ -1,6 +1,6 @@
 import React from 'react'
 import MessageBubble from './MessageBuble'
-import { Message } from '@/interfaces/chat/message'
+import { Message } from '@/interfaces/message.interface'
 
 interface MessageList {
     messages: Message[],

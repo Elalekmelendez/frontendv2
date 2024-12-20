@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { MenuItemProps } from '@/interfaces/chat/MenuItemProps'
+import { MenuItemProps } from '@/interfaces'
 
 const MenuItem = ({ href, text, children, className = '', hasSubmenu = false }: MenuItemProps) => (
     <li className={`max-lg:border-b max-lg:py-2 px-3 ${className} ${hasSubmenu ? 'group relative' : ''}`}>

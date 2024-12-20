@@ -32,68 +32,81 @@ const SideBar = () => {
 
     return (
         <>
+            {/* Sidebar */}
             <div
-                className={`fixed top-0 left-0 h-screen bg-[#f7f7f8] z-40 transition-all duration-400 ${
-                    isCollapsed ? 'w-0 overflow-hidden' : 'w-[280px] py-6 px-4'
-                }`}
+                className={`fixed top-0 left-0 h-screen bg-[#f7f7f8] z-40 transition-transform duration-300 transform ${isCollapsed ? '-translate-x-full sm:translate-x-0' : 'translate-x-0'
+                    } w-[280px] sm:w-[320px] py-6 px-4`}
             >
-                {!isCollapsed && (
-                    <nav className="h-full font-[sans-serif]">
-                        <div className="relative">
-                            <Link href="/">
-                                <Image src={logoZenomy} width={150} alt="Logo Zenomy" />
-                            </Link>
+                <nav className="h-full font-[sans-serif] flex flex-col">
+                    <div className="relative flex items-center justify-between mb-6">
+                        <Link href="/">
+                            <Image src={logoZenomy} width={150} alt="Logo Zenomy" />
+                        </Link>
+                        {/* Collapse button for mobile */}
+                        <button
+                            className="h-6 w-6 p-[6px] cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full sm:hidden"
+                            onClick={toggleSidebar}
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    toggleSidebar();
+                                }
+                            }}
+                        >
+                            <ArrowIcon />
+                        </button>
+                    </div>
 
-                            <div
-                                className="absolute -right-6 top-2 h-6 w-6 p-[6px] cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full"
-                                onClick={toggleSidebar}
-                            >
-                                <ArrowIcon />
-                            </div>
-                        </div>
+                    <div className="flex-grow overflow-auto py-6">
+                        <ul className="space-y-2 p-1">
+                            <li className="mb-4">
+                                <input
+                                    type="text"
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#007bff] text-black"
+                                />
+                            </li>
+                            {filteredConversations.map((item, index) => (
+                                <ConversationItem key={index} text={item} />
+                            ))}
+                        </ul>
+                    </div>
 
-                        <div className="overflow-auto py-6 h-full mt-4">
-                            <ul className="space-y-2 p-1 text-white">
-                                <li className="mb-4">
-                                    <input
-                                        type="text"
-                                        placeholder="Search..."
-                                        value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#007bff] text-black"
-                                    />
-                                </li>
-                                {filteredConversations.map((item, index) => (
-                                    <ConversationItem key={index} text={item} />
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className="absolute bottom-0 left-0 w-full p-4 bg-[#7CC3C7] text-white">
-                            <UserProfile
-                                name="Felipe Castro"
-                                email="felipe@gmail.com"
-                                togglePopup={togglePopup}
-                                showPopup={showPopup}
-                                popupRef={popupRef}
-                                buttonRef={buttonRef}
-                            />
-                        </div>
-                    </nav>
-                )}
+                    <div className="p-4 bg-[#7CC3C7] text-white">
+                        <UserProfile
+                            name="Felipe Castro"
+                            email="felipe@gmail.com"
+                            togglePopup={togglePopup}
+                            showPopup={showPopup}
+                            popupRef={popupRef}
+                            buttonRef={buttonRef}
+                        />
+                    </div>
+                </nav>
             </div>
 
-            {isCollapsed && (
-                <div
-                    className="fixed top-4 left-4 h-8 w-8 p-2 cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full z-50"
+            {/* Hamburger Icon for mobile */}
+            {
+                isCollapsed ?
+                    (<button
+                        className="fixed top-4 left-4 h-8 w-8 p-2 cursor-pointer bg-[#007bff] flex items-center justify-center rounded-full z-50 sm:hidden"
+                        onClick={toggleSidebar}
+                    >
+                        <ArrowIcon />
+                    </button>) : null
+            }
+
+            {/* Overlay for mobile */}
+            {!isCollapsed && (
+                <button
+                    className="fixed inset-0 bg-black bg-opacity-40 z-30 sm:hidden"
                     onClick={toggleSidebar}
-                >
-                    <Hamburger />
-                </div>
+                />
             )}
         </>
     );
 };
-
 
 export default SideBar;
