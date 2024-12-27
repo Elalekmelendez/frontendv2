@@ -1,6 +1,6 @@
 import React from 'react'
 import { UserProfileProps } from '@/interfaces';
-
+import Image from 'next/image';
 
 
 const UserProfile: React.FC<UserProfileProps> = ({
@@ -12,7 +12,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
     buttonRef,
 }) => (
     <div className="flex flex-wrap items-center justify-start gap-4 cursor-pointer">
-        <img
+        <Image
             src="https://readymadeui.com/team-1.webp"
             className="w-12 h-12 rounded-full"
             alt="User Avatar"

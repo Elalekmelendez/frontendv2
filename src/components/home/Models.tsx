@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 import Image from 'next/image'
 import home_image from '@public/home_image.png'
 import { ArticleCardProps } from '@/interfaces/ArticleCard.interface'
@@ -253,20 +254,26 @@ const models = [
 
 
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ category, title, date, image }) => (
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, date }) => (
     <div className="cursor-pointer rounded overflow-hidden group">
         <div>
             <span className="block text-gray-400 mb-2">{date}</span>
             <h3 className="text-xl font-semibold group-hover:text-blue-500 transition-all">{title}</h3>
             <div className="mt-4">
-                <Image src={home_image} width={300} alt='foto blog' />
+                <Image src={home_image} width={300} height={300} alt='foto blog' />
             </div>
         </div>
         <hr className="my-6" />
     </div>
-)
+);
 
 const Models = () => {
+    const [visibleItems, setVisibleItems] = useState(9);
+
+    const loadMore = () => {
+        setVisibleItems((prev) => Math.min(prev + 9, models.length));
+    };
+
     return (
         <div className="px-4 sm:px-10 mt-28">
             <div className="max-w-7xl mx-auto">
@@ -276,13 +283,32 @@ const Models = () => {
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
-                    {models.map((model) => (
+                    {models.slice(0, visibleItems).map((model) => (
                         <ArticleCard key={model.id} {...model} />
                     ))}
                 </div>
+                {visibleItems < models.length && (
+                    <div className="flex justify-center mt-10">
+                        <button
+                            onClick={loadMore}
+                        className="bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8">
+                            Cargar más
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-[14px] fill-current ml-2"
+                                viewBox="0 0 492.004 492.004"
+                            >
+                                <path
+                                    d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                                    data-original="#000000"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Models
+export default Models;

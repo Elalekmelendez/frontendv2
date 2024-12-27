@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Innovation = () => {
     return (
@@ -6,9 +7,11 @@ const Innovation = () => {
             <div className="max-w-7xl w-full mx-auto">
                 <div className="grid md:grid-cols-2 items-center gap-10">
                     <div className="w-full h-full">
-                        <img
+                        <Image
                             src="https://readymadeui.com/team-image.webp"
                             alt="Premium Benefits"
+                            width={500}
+                            height={500}
                             className="w-full h-full object-cover"
                         />
                     </div>

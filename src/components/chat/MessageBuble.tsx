@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MessageBubbleProps } from "@/interfaces/chat/MessageBubbleProps";
+import { MessageBubbleProps } from "@/interfaces/";
 
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({ sender, text }) => {

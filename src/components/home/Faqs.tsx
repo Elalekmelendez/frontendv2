@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 const Faqs = () => {
@@ -10,27 +10,33 @@ const Faqs = () => {
 
     const questions = [
         {
+            id: 1,
             question: "¿Qué hace ZenomyAI por mi negocio?",
             answer:
                 "ZenomyAI automatiza tareas, optimiza procesos y proporciona análisis basados en inteligencia artificial para mejorar tu productividad y toma de decisiones.",
         },
         {
+            id: 2,
             question: "¿Es seguro usar ZenomyAI?",
             answer: "ZenomyAI utiliza los más altos estándares de seguridad para proteger tus datos.",
         },
         {
+            id: 3,
             question: "¿Qué planes de suscripción ofrecen?",
             answer: "Ofrecemos una variedad de planes adaptados a las necesidades de tu negocio.",
         },
         {
+            id: 4,
             question: "¿Cómo puedo registrarme en ZenomyAI?",
             answer: "Puedes registrarte directamente en nuestro sitio web en la sección de suscripciones.",
         },
         {
+            id: 5,
             question: "¿Ofrecen soporte técnico?",
             answer: "Sí, nuestro equipo de soporte técnico está disponible para ayudarte en todo momento.",
         },
         {
+            id: 6,
             question: "¿Puedo probar ZenomyAI antes de suscribirme?",
             answer: "Ofrecemos una prueba gratuita para que conozcas nuestras funcionalidades.",
         },
@@ -43,12 +49,12 @@ const Faqs = () => {
                     <h2 className="md:text-4xl text-3xl font-semibold mb-6">Preguntas Frecuentes</h2>
                     <p>
                         Explore common questions and find answers to help you make the most out of our services. If you
-                        don't see your question here, feel free to contact us for assistance.
+                        don&apos;t see your question here, feel free to contact us for assistance.
                     </p>
                 </div>
                 <div className="divide-y">
                     {questions.map((item, index) => (
-                        <div key={index}>
+                        <div key={item.id}>
                             <button
                                 type="button"
                                 onClick={() => toggleQuestion(index)}

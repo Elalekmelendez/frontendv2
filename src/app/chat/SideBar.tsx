@@ -4,13 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { UserProfile, ArrowIcon, ConversationItem } from '@/components/side-bar';
 import useSideBar from '@/hooks/useSideBar';
-import Hamburger from '@/components/common/icons/Hamburger.icon';
 
 const conversations = [
-    'Hola, como estas?',
-    'Como se programa en Typescript?',
-    'Dame una dieta para ser fuerte',
-    'Como saber si el mani me da...',
+    { id: 1, text: 'Hola, como estas?' },
+    { id: 2, text: 'Como se programa en Typescript?' },
+    { id: 3, text: 'Dame una dieta para ser fuerte' },
+    { id: 4, text: 'Como saber si el mani me da...' },
 ];
 
 const SideBar = () => {
@@ -24,7 +23,7 @@ const SideBar = () => {
         togglePopup,
         setSearchQuery,
         filteredConversations,
-    } = useSideBar(conversations);
+    } = useSideBar(conversations.map(conversation => conversation.text));
 
     const toggleSidebar = () => {
         setIsCollapsed(!isCollapsed);
@@ -69,7 +68,7 @@ const SideBar = () => {
                                 />
                             </li>
                             {filteredConversations.map((item, index) => (
-                                <ConversationItem key={index} text={item} />
+                                <ConversationItem key={conversations[index].id} text={item} />
                             ))}
                         </ul>
                     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Security = () => {
     return (
@@ -28,9 +29,11 @@ const Security = () => {
                     </button>
                 </div>
                 <div className="w-full h-full">
-                    <img
+                    <Image
                         src="https://readymadeui.com/login-image.webp"
                         alt="feature"
+                        width={500}
+                        height={500}
                         className="w-full h-full object-cover"
                     />
                 </div>
