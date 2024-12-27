@@ -1,39 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto Frontend ZenomyAi
 
-## Getting Started
+¡Bienvenido a nuestro proyecto desarrollado con [Next.js](https://nextjs.org/)!
 
-First, run the development server:
+Este documento proporciona toda la información necesaria para configurar y ejecutar este proyecto.
 
+---
 
+## Tabla de Contenidos
+
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Ejecución del Proyecto](#ejecución-del-proyecto)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Scripts Disponibles](#scripts-disponibles)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
+
+---
+
+## Requisitos
+
+Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
+
+- **Node.js**: versión 20 o superior
+- **npm** o **yarn**
+
+---
+
+## Instalación
+
+Sigue estos pasos para configurar el proyecto:
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/usuario/repo-nextjs.git
+   ```
+
+2. Navega al directorio del proyecto:
+   ```bash
+   cd repo-nextjs
+   ```
+
+3. Instala las dependencias:
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+---
+
+## Ejecución del Proyecto
+
+### Desarrollo
+Para iniciar el servidor de desarrollo:
 ```bash
-npm install
-# then
 npm run dev
-# or
+# o
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Accede a la aplicación en `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Producción
+Para construir y ejecutar el proyecto en modo producción:
+1. Construye la aplicación:
+   ```bash
+   npm run build
+   # o
+   yarn build
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Inicia el servidor:
+   ```bash
+   npm start
+   # o
+   yarn start
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Contruye la imagen de docker
+    ```
+    docker build -t nextjs-docker .
+    docker run -p 3000:3000 nextjs-docker
+    ```
+---
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts Disponibles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **`npm run dev`**: Inicia el servidor en modo desarrollo.
+- **`npm run build`**: Construye la aplicación para producción.
+- **`npm start`**: Inicia el servidor en modo producción.
+- **`npm run lint`**: Analiza el código para detectar errores y advertencias.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
