@@ -1,3 +1,4 @@
+"use client";
 import { useState, ChangeEvent, KeyboardEvent, useRef, useEffect } from "react";
 import { sendMessageToRasa } from "@/lib/rasaApi";
 import { Message } from "@/interfaces/message.interface";

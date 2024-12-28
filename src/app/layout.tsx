@@ -24,7 +24,7 @@ export default function RootLayout({
 
   const pathname = usePathname();
 
-  const excludeFooterPaths = ['/chat']; // Agrega las rutas donde no quieras mostrar el Footer
+  const excludePaths = ['/chat','/dashboard']; // Agrega las rutas donde no quieras mostrar el Footer
 
   return (
     <html lang="es">
@@ -35,10 +35,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {!excludeFooterPaths.includes(pathname) && <Header/>}
+        {!excludePaths.includes(pathname) && <Header/>}
 
         {children}
-        {!excludeFooterPaths.includes(pathname) && <Footer />}
+        {!excludePaths.includes(pathname) && <Footer />}
 
       </body>
     </html>
