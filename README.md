@@ -47,6 +47,10 @@ Sigue estos pasos para configurar el proyecto:
    # o
    yarn install
    ```
+4. Comandos prisma:
+   ```bash
+   npx prisma generate
+   ```
 
 ---
 
