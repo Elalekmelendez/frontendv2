@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum SubscriptionnStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model users {
+  id         String    @id @default(uuid()) // uuidv4
+  email      String    @unique
+  password   String
+  picture    String?
+  provider   String?
+  country    String?
+  last_login DateTime?
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+
+  transactions  transactions[]
+  chat_sessions chat_sessions[]
+}
+
+model transactions {
+  id                  String              @id @default(uuid()) // uuidv4
+  user_id             String
+  user                users               @relation(fields: [user_id], references: [id])
+  amount              Decimal             @db.Decimal(10, 2)
+  transaction_date    DateTime
+  payment_id          String
+  payment_method      String
+  model_id            String
+  model               models_ai           @relation(fields: [model_id], references: [id])
+  status_subscription SubscriptionnStatus
+  created_at          DateTime            @default(now())
+  updated_at          DateTime            @updatedAt
+}
+
+model models_ai {
+  id          String   @id @default(uuid()) // uuidv4
+  category    String
+  name        String
+  description String
+  version     String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  transactions transactions[]
+}
+
+model chat_sessions {
+  id         String   @id @default(uuid()) // uuidv4
+  user_id    String
+  user       users    @relation(fields: [user_id], references: [id])
+  started_at DateTime
+  ended_at   DateTime
+  status     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  message_bot message_bot[]
+}
+
+model message_bot {
+  id           String        @id @default(uuid()) // uuidv4
+  session_id   String
+  session      chat_sessions @relation(fields: [session_id], references: [id])
+  message_type String
+  message      String
+  sender       String
+  created_at   DateTime      @default(now())
+}

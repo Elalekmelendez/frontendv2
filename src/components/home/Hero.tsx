@@ -11,16 +11,14 @@ const Hero = () => {
                 <div className="grid lg:grid-cols-2 justify-center items-center gap-10">
                     <div>
                         <h1 className="md:text-5xl text-4xl font-bold mb-6 md:!leading-[55px]">
-                            Impulsa tu negocio con inteligencia artificial avanzada
+                            Impulsa tu negocio con inteligencia artificial
                         </h1>
                         <p className="text-base leading-relaxed">
-                            Descubre el poder de ZenomyAI, la plataforma de análisis inteligente diseñada para automatizar tareas,
-                            optimizar procesos y ofrecerte estrategias basadas en datos reales.
-                            Con nuestras herramientas de IA de última generación,
-                            podrás tomar decisiones informadas y escalar tu negocio de manera estratégica y eficiente.
+                            Con ZenomyAI, resuelve tus tareas y toma decisiones más inteligentes 
+                            con ayuda de nuestra tecnología avanzada. Simplifica tu trabajo y lleva tu negocio al siguiente nivel.
                         </p>
                         <div className="flex flex-wrap gap-y-4 gap-x-8 mt-8">
-                            <Link href={"/subscriptions"}>
+                            <Link href={"/register"}>
                                 <button className="bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4">
                                     Comenzar ahora
                                     <svg
@@ -39,14 +37,12 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="max-lg:mt-12 h-full">
-
                         <Image
                             src={home_image}
                             width={1000}
                             alt='home image'
-
+                            className="rounded-lg"
                         />
-
                     </div>
                 </div>
             </div>

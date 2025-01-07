@@ -1,5 +1,6 @@
 import React from 'react'
 import { Hero, Features, Innovation, Security, StartNow, Models, Faqs } from '@/components/home/';
+import NewSubscription from '@/components/subscriptionNew/NewSubscription';
 
 const Home = () => {
   return (
@@ -24,17 +25,19 @@ const Home = () => {
 
         <Hero />
 
-        <Features />
+        <NewSubscription />
+        
+        {/* <Features /> */}
 
-        <Innovation />
+        {/* <Innovation /> */}
 
-        <Security />
+        {/* <Security /> */}
 
-        <StartNow />
+        {/* <StartNow /> */}
 
-        <Models />
+        {/* <Models /> */}
 
-        <Faqs />
+        {/* <Faqs /> */}
 
       </div>
     </>
