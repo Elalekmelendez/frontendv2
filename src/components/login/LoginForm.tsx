@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { InputField, SocialLoginButtons, SubmitButton } from "../common";
+import { InputField, SubmitButton } from "../common";
 import Link from "next/link";
 
 const LoginForm = () => {
@@ -71,7 +71,6 @@ const LoginForm = () => {
       </div>
       <SubmitButton text={loading ? "Cargando..." : "Iniciar Sesión"} disabled={loading} />
       <p className="my-6 text-sm text-gray-400 text-center">o continuar con</p>
-      <SocialLoginButtons />
     </form>
   );
 };

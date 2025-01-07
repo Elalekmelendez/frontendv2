@@ -67,7 +67,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await signOut({
-        callbackUrl: "/", // Redirige al usuario a /login tras cerrar sesión
+        callbackUrl: process.env.NEXT_PUBLIC_BASE_URL ?? "/", // Redirige al usuario a /login tras cerrar sesión
       });
     } catch (error) {
       console.error("Error al cerrar sesión:", error);

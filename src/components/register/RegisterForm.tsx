@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { InputField, SubmitButton, SocialLoginButtons } from "../common";
+import { InputField, SubmitButton } from "../common";
 import { useRouter } from "next/navigation";
 
 const RegisterForm = () => {
@@ -89,7 +89,6 @@ const RegisterForm = () => {
       />
       <SubmitButton text={loading ? "Registrando..." : "Registrar"} disabled={loading} />
       <p className="my-6 text-sm text-gray-400 text-center">o continuar con</p>
-      <SocialLoginButtons />
     </form>
   );
 };
