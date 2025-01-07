@@ -14,13 +14,11 @@ const MenuList = () => (
             />
         </MenuItem>
         <MenuItem href="/" text="Inicio" />
-        <MenuItem href="/" text="Páginas" hasSubmenu>
-            <SubMenu />
-        </MenuItem>
-        <MenuItem href="/subscriptions" text="Suscripciones" />
-        <MenuItem href="/" text="Blog" />
-        <MenuItem href="/" text="Sobre nosotros" />
         <MenuItem href="/chat" text="Chat" />
+        <MenuItem href="/login" text="Iniciar" />
+        <MenuItem href="/register" text="Registrar" />
+
+       
     </ul>
 )
 

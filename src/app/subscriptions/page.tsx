@@ -1,4 +1,5 @@
-import {SubscriptionCard} from "@/components/subscriptions";
+"use client"
+import { SubscriptionCard } from "@/components/subscriptions";
 import React from "react";
 
 const subscriptions = () => {
@@ -67,6 +68,7 @@ const subscriptions = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

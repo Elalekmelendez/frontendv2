@@ -5,7 +5,7 @@ import logo_zenomy from '../../../public/logo-zenomy.png';
 
 const IntroSection = () => (
     <div>
-        <Link href="/chat">
+        <Link href="/">
             <Image src={logo_zenomy} width={260} alt="Logo Zenomy" className="mb-12" />
         </Link>
         <h2 className="text-4xl font-extrabold lg:leading-[50px] text-white">
