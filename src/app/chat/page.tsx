@@ -1,7 +1,4 @@
 "use client";
-import SideBar from "./SideBar";
-import Chatbot from "@/app/chat/Chatbot";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import home_image from '@public/home_image.png'
 

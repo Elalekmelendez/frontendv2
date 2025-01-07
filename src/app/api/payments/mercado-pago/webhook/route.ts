@@ -1,7 +1,6 @@
 "use server";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import prisma, { SubscriptionnStatus } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   const payload = await req.json();
@@ -62,19 +61,7 @@ async function extractClientDetails(clientDetails: any) {
   const status = clientDetails.status;
   const subscriptionId = clientDetails.subscriptionId || null;
 
-  // await prisma.transactions.create({
-  //   data:{
-  //     user_id: '', // Add appropriate user_id value
-  //     amount: 0, // CHEKEAR
-  //     transaction_date: new Date(),
-  //     payment_id:  '',
-  //     payment_method: '',
-  //     model_id: '', // Add appropriate model_id value
-  //     status_subscription: SubscriptionnStatus.ACTIVE , // Add appropriate status_subscription value
-  //     created_at: new Date(),
-  //     updated_at: new Date()
-  //   }
-  // })
+  // Guardarlos en Base de datos
 
   return { email, status, subscriptionId };
 }

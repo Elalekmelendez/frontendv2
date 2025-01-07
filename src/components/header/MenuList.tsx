@@ -1,6 +1,5 @@
 import React from 'react'
 import MenuItem from './MenuItem'
-import SubMenu from './SubMenu'
 import logo_zenomy from '@public/logo-zenomy.png'
 import Image from 'next/image'
 
