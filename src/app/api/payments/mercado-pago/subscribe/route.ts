@@ -4,6 +4,10 @@ import { MercadoPagoConfig, PreApproval } from "mercadopago";
 import { CreateSubscriptionDto, Frecuency } from "@/dto";
 import { PRICE_MONTHLY, PRICE_YEARLY } from "@/lib/Prices";
 
+const config = new MercadoPagoConfig({
+  accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
+});
+
 export async function POST(request: NextRequest) {
 
   try {
@@ -22,11 +26,9 @@ export async function POST(request: NextRequest) {
   }
 }
 
-const config = new MercadoPagoConfig({
-  accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
-});
 
-export const createSubscription = async (createSubscriptionDto: CreateSubscriptionDto) => {
+
+const createSubscription = async (createSubscriptionDto: CreateSubscriptionDto) => {
 
 
   const {payer_email,frequency, back_url} = createSubscriptionDto;
