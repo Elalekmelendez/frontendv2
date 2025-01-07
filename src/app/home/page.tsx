@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, Features, Innovation, Security, StartNow, Models, Faqs } from '@/components/home/';
+import { Hero } from '@/components/home/';
 import NewSubscription from '@/components/subscriptionNew/NewSubscription';
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
         <Hero />
 
         <NewSubscription />
-        
+
         {/* <Features /> */}
 
         {/* <Innovation /> */}

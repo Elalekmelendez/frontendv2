@@ -2,41 +2,13 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { SocialLoginButtons, SubmitButton, InputField } from '@/components/common';
-import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const router = useRouter();
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Manejar la respuesta exitosa, por ejemplo, redirigir al usuario
-        const data = await response.json();
-        console.log('Login successful', data);
-        router.push('/chat'); // Redirige al usuario a la página de destino
-      } else {
-        // Manejar el error de inicio de sesión
-        const errorData = await response.json();
-        console.error('Login failed:', errorData.message || 'Unknown error');
-      }
-    } catch (error: any) {
-      console.error('Error during login:', error.message || error.toString());
-    }
   };
 
   return (
