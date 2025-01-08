@@ -1,18 +1,23 @@
-import React from 'react'
+import React from 'react';
 
 const StartNow = () => {
     return (
-        <div className="mt-28 px-4 sm:px-10 bg-blue-100">
-            <div className="min-h-[400px] relative h-full max-w-2xl mx-auto flex flex-col justify-center items-center text-center px-6 py-16">
-                <h2 className="md:text-4xl text-3xl font-semibold mb-6">
+        <div className="mt-28 px-4 sm:px-10 bg-gradient-to-r from-[#7DC3D7] via-[#9EB4BE] to-[#E8E8E8]">
+            <div className="min-h-[400px] relative h-full max-w-3xl mx-auto flex flex-col justify-center items-center text-center px-6 py-16">
+                {/* Título */}
+                <h2 className="md:text-4xl text-3xl font-extrabold text-[#1D343E] mb-6">
                     Tu trabajo, donde sea que estés
                 </h2>
-                <p>
+
+                {/* Descripción */}
+                <p className="text-base leading-relaxed text-[#435D69] max-w-2xl">
                     Accede a ZenomyAI desde cualquier lugar y en cualquier momento.
                     Nuestra plataforma basada en la nube te permite gestionar tus tareas,
                     analizar datos y optimizar tu negocio con herramientas impulsadas por inteligencia artificial, estés donde estés.
                 </p>
-                <button className="bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-5 py-4 mt-8">
+
+                {/* Botón */}
+                <button className="bg-[#1D343E] hover:bg-[#435D69] text-white shadow-md flex items-center transition-all font-semibold rounded-lg px-6 py-3 mt-8">
                     Comienza ahora
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +32,7 @@ const StartNow = () => {
                 </button>
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default StartNow
+export default StartNow;

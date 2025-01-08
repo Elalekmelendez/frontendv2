@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Header = () => {
   return (
-    <h2 className="text-center bg-[#7CC3C7] text-white py-2">Chat con ZenomyAi</h2>
-  )
-}
+    <header className="bg-[#7DC3D7] text-white py-4 text-center">
+      <h1 className="text-2xl font-bold">Chat ZenomyAI</h1>
+    </header>
+  );
+};
 
 export default Header;

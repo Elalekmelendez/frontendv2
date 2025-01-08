@@ -1,22 +1,21 @@
-import React from 'react'
-import MessageBubble from './MessageBuble'
-import { Message } from '@/interfaces/message.interface'
+import React from "react";
+import MessageBubble from "./MessageBuble";
 
-interface MessageList {
-    messages: Message[],
-    messagesEndRef: React.RefObject<HTMLDivElement | null>,
-}
+const MessageList = () => {
+  const messages = [
+    { id: 1, sender: "user", text: "Hola, ¿puedes ayudarme con algo?" },
+    { id: 2, sender: "bot", text: "¡Claro! ¿En qué necesitas ayuda?" },
+    { id: 3, sender: "user", text: "Estoy buscando información sobre ZenomyAI." },
+    { id: 4, sender: "bot", text: "ZenomyAI es una plataforma avanzada para potenciar tu negocio." },
+  ];
 
-const MessageList: React.FC<MessageList> = ({ messages, messagesEndRef }) => {
-    return (
-        <div className="flex-1 p-3 overflow-y-auto bg-gray-100 max-h-[800px]">
-            {messages.map((msg) => (
-                <MessageBubble key={msg.id} sender={msg.sender} text={msg.text} />
-            ))}
-            <div ref={messagesEndRef} />
+  return (
+    <div className="space-y-4">
+      {messages.map((message) => (
+        <MessageBubble key={message.id} sender={message.sender} text={message.text} />
+      ))}
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default MessageList
+export default MessageList;

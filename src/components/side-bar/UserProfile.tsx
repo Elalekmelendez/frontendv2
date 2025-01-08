@@ -15,6 +15,8 @@ const UserProfile: React.FC<UserProfileProps> = ({
         <Image
             src="https://readymadeui.com/team-1.webp"
             className="w-12 h-12 rounded-full"
+            width={500}
+            height={500}
             alt="User Avatar"
         />
 

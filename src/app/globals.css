@@ -5,9 +5,66 @@
 :root {
   --background-light: #ffffff;
   --background-dark: #212121;
-  --foreground: #171717;
+  --foreground-light: #171717;
+  --foreground-dark: #ffffff;
+  --text-primary-light: #222222;
+  --text-primary-dark: #ffffff;
+  --text-secondary-light: #555555;
+  --text-secondary-dark: #cccccc;
+  --accent-light: #0056D2;
+  --accent-dark: #1E90FF;
+  --hover-accent-light: #003F9A;
+  --hover-accent-dark: #0056D2;
+  --border-light: #e0e0e0;
+  --border-dark: #333333;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-primary-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-primary-dark);
+}
+
+/* Links */
+a {
+  color: var(--accent-light);
+  transition: color 0.3s ease;
+}
+
+body.dark a {
+  color: var(--accent-dark);
+}
+
+/* Borders */
+.border {
+  border-color: var(--border-light);
+}
+
+body.dark .border {
+  border-color: var(--border-dark);
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-light);
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--hover-accent-light);
+}
+
+body.dark button {
+  background-color: var(--accent-dark);
+}
+
+body.dark button:hover {
+  background-color: var(--hover-accent-dark);
 }
