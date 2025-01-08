@@ -94,3 +94,5 @@ Para construir y ejecutar el proyecto en modo producción:
 - **`npm run lint`**: Analiza el código para detectar errores y advertencias.
 
 ---
+
+Fucking pullrequest

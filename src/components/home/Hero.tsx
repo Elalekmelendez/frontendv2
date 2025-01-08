@@ -52,9 +52,7 @@ const Hero = () => {
         <p className="text-base leading-relaxed text-primary-light dark:text-primary-dark">
           Descubre el poder de ZenomyAI, la plataforma de análisis inteligente
           diseñada para automatizar tareas, optimizar procesos y ofrecerte
-          estrategias basadas en datos reales. Con nuestras herramientas de IA
-          de última generación, podrás tomar decisiones informadas y escalar tu
-          negocio de manera estratégica y eficiente.
+          estrategias basadas en datos reales.
         </p>
       </div>
     </section>
