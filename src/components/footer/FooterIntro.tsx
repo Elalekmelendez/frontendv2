@@ -9,7 +9,7 @@ const FooterIntro = () => (
             <Image src={logo_zenomy} width={250} alt="logo zenomy" />
         </Link>
         <p className="mb-2">
-            <b>Conectando tu negocio con el futuro de la inteligencia artificial.</b>
+            <b>Conectando tu negocio con el futuro de la inteligencia artificial.hgjhghjfjhdfhgdx</b>
         </p>
     </div>
 );
